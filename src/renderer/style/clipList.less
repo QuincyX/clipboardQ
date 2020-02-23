@@ -1,0 +1,81 @@
+.clipList {
+  @itemHeight: 70px;
+  @actionWid: 30px;
+  .item {
+    position: relative;
+    background: white;
+    color: #333;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background: @bg2;
+      .content {
+        height: auto;
+      }
+      .el-icon-delete {
+        display: block;
+      }
+    }
+    .content {
+      display: inline-block;
+      vertical-align: top;
+      width: calc(100% - @actionWid - 21px);
+      min-height: @itemHeight - 10px;
+      word-wrap: break-word;
+      margin: 10px;
+    }
+    .actionBar {
+      display: inline-block;
+      vertical-align: top;
+      width: @actionWid;
+      height: @itemHeight + 10px;
+      text-align: center;
+      i {
+        font-size: 20px;
+        padding: 10px 5px;
+        cursor: pointer;
+        &:hover {
+          color: @c2;
+        }
+      }
+    }
+    .bottomActionBar {
+      background: @c2;
+      color: #fff;
+      display: none;
+      i {
+        font-size: 20px;
+        padding: 10px 30px;
+        border: 1px solid @c2;
+        cursor: pointer;
+        &:hover {
+          background: #fff;
+          color: @c2;
+        }
+      }
+    }
+    .el-icon-delete {
+      display: none;
+    }
+    .el-icon-star-on {
+      color: @c1;
+    }
+    .el-icon-arrow-up {
+      display: none;
+    }
+  }
+  .activeItem {
+    .content {
+      height: auto;
+    }
+    .bottomActionBar {
+      display: block;
+    }
+    .el-icon-arrow-up {
+      display: inline-block;
+    }
+    .el-icon-arrow-down {
+      display: none;
+    }
+  }
+}
