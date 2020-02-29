@@ -34,13 +34,13 @@ function createWindow() {
   mainWindow.setThumbarButtons([
     {
       tooltip: 'button1',
-      icon: path.join(__dirname, '../../build/icons/icon.png'),
+      // icon: path.join(__dirname, '../../build/icons/icon.png'),
       click() {
         console.log('button1 clicked')
       }
     }
   ])
-  createTray()
+  // createTray()
   mainWindow.loadURL(winURL)
   const ret = globalShortcut.register('CommandOrControl+Shift+V', () => {
     mainWindow.webContents.send('activeTab', '最近的剪切板')
